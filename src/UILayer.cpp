@@ -171,3 +171,72 @@ struct $modify(UILayer) {
     }
     void keyUp(enumKeyCodes) {}
 };
+
+$execute {
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/jump-p1",
+        "Jump P1",
+        "Player 1 Jump",
+        { Keybind::create(KEY_Space, Modifier::None), ControllerBind::create(CONTROLLER_A), ControllerBind::create(CONTROLLER_RB) },
+        Category::PLAY,
+        false
+    });
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/jump-p2",
+        "Jump P2",
+        "Player 2 Jump",
+        { Keybind::create(KEY_Up, Modifier::None), ControllerBind::create(CONTROLLER_LB) },
+        Category::PLAY,
+        false
+    });
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/place-checkpoint",
+        "Place Checkpoint",
+        "Place a Checkpoint in Practice Mode",
+        { Keybind::create(KEY_Z, Modifier::None), ControllerBind::create(CONTROLLER_X) },
+        Category::PLAY, true
+    });
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/delete-checkpoint",
+        "Delete Checkpoint",
+        "Delete a Checkpoint in Practice Mode",
+        { Keybind::create(KEY_X, Modifier::None), ControllerBind::create(CONTROLLER_B) },
+        Category::PLAY, true
+    });
+
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/pause-level",
+        "Pause Level",
+        "Pause the Level",
+        { ControllerBind::create(CONTROLLER_Start) },
+        Category::PLAY, false
+    });
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/practice-level",
+        "Toggle Practice",
+        "Toggles Practice Mode",
+        { ControllerBind::create(CONTROLLER_X) },
+        Category::PLAY_PAUSE, false
+    });
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/unpause-level",
+        "Unpause Level",
+        "Unpause the Level",
+        { Keybind::create(KEY_Space, Modifier::None), ControllerBind::create(CONTROLLER_Start) },
+        Category::PLAY_PAUSE, false
+    });
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/exit-level",
+        "Exit Level",
+        "Exit the Level",
+        { ControllerBind::create(CONTROLLER_B) },
+        Category::PLAY_PAUSE, false
+    });
+    BindManager::get()->registerBindable({
+        "robtop.geometry-dash/restart-level",
+        "Restart level",
+        "Restarts the Level",
+        { },
+        Category::PLAY_PAUSE, false
+    });
+}
