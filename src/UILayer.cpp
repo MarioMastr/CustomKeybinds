@@ -166,4 +166,4 @@ struct $modify(UILayer) {
         }
     }
     void keyUp(enumKeyCodes) {}
-}
+};
